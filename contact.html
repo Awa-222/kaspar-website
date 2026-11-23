@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Kaspar</title>
+  <meta name="description" content="Contact Kaspar for vacuum pump, pump system, blower and compressor enquiries. Send your requirements and receive a recommendation and quotation.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans:wght@300;400;500;700;800&display=swap">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">KASPAR<span>.</span></a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">Home</a> / Contact</nav>
+      <h2 class="section-title" style="margin-top:16px;">Contact Us</h2>
+      <p class="section-sub">Tell us about your application and required equipment. Our team will reply with a suitable recommendation and quotation.</p>
+
+      <div class="grid" style="grid-template-columns: 1fr 1.4fr; gap: 40px;">
+
+        <!-- Contact info -->
+        <div class="contact-info">
+          <div class="item">
+            <div class="icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p>sales@example.com</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon">💬</div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>+00 000 0000 000</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <p>+00 000 0000 000</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon">📍</div>
+            <div>
+              <h4>Address</h4>
+              <p>Dongguan, Guangdong, China</p>
+            </div>
+          </div>
+          <!-- TODO: replace placeholder email, phone, WhatsApp and address with real company contact details -->
+        </div>
+
+        <!-- Enquiry form -->
+        <div class="card">
+          <h3 style="margin-bottom: 18px;">Send an Enquiry</h3>
+          <!-- Replace the Formspree action below with your own form endpoint after launch -->
+          <form class="form-grid" action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="form-field">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-field">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company">
+            </div>
+            <div class="form-field">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-field">
+              <label for="whatsapp">WhatsApp / Phone</label>
+              <input type="text" id="whatsapp" name="whatsapp">
+            </div>
+            <div class="form-field">
+              <label for="product">Product Interested In</label>
+              <select id="product" name="product">
+                <option value="">Select a product</option>
+                <option>Rotary Vane Vacuum Pump</option>
+                <option>Liquid Ring Vacuum Pump</option>
+                <option>Root Blower Booster Unit</option>
+                <option>Screw Air Compressor</option>
+                <option>Custom Pump Skid System</option>
+                <option>Suction Truck Water Pump</option>
+                <option>Other / Spare Parts</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="message">Your Requirements *</label>
+              <textarea id="message" name="message" placeholder="Describe application, required capacity, pressure, voltage and quantity." required></textarea>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>KASPAR</h4>
+          <p style="font-size:14px;">Vacuum pumps, pump systems, root blowers and screw air compressors for industrial worldwide customers.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: sales@example.com</li>
+            <li>WhatsApp: +00 000 0000 000</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Kaspar. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
