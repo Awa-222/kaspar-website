@@ -1,18 +1,18 @@
 /* ===== Kaspar Website — Global Styles ===== */
 :root {
-  --orange: #d64000;
-  --orange-dark: #b83600;
-  --orange-soft: #fff3eb;
-  --navy: #00346e;
-  --navy-2: #0a4a8f;
+  --orange: #ffb400;
+  --orange-dark: #e09a00;
+  --orange-soft: #fff5df;
+  --navy: #222529;
+  --navy-2: #34383d;
   --steel: #6f7680;
   --bg: #f4f4f4;
   --white: #ffffff;
   --line: #ececec;
   --text: #1c2733;
   --radius: 12px;
-  --shadow: 0 6px 24px rgba(0, 52, 110, 0.08);
-  --shadow-hover: 0 14px 34px rgba(0, 52, 110, 0.16);
+  --shadow: 0 6px 24px rgba(34, 37, 41, 0.08);
+  --shadow-hover: 0 14px 34px rgba(34, 37, 41, 0.16);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -71,10 +71,10 @@ a:hover { text-decoration: underline; }
 .hero::after {
   content: ""; position: absolute; right: -120px; top: -120px;
   width: 360px; height: 360px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(214, 64, 0, .25), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 180, 0, .18), transparent 70%);
 }
 .hero h1 { font-size: 42px; line-height: 1.2; margin-bottom: 18px; position: relative; z-index: 1; }
-.hero p.lead { font-size: 18px; max-width: 640px; color: #d6e3f2; margin-bottom: 32px; position: relative; z-index: 1; }
+.hero p.lead { font-size: 18px; max-width: 640px; color: #d9dbdd; margin-bottom: 32px; position: relative; z-index: 1; }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
 
 /* ===== Buttons ===== */
@@ -83,7 +83,7 @@ a:hover { text-decoration: underline; }
   padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 15px;
   cursor: pointer; border: 1px solid transparent; transition: all .2s;
 }
-.btn-primary { background: var(--orange); color: var(--white); }
+.btn-primary { background: var(--orange); color: var(--navy); }
 .btn-primary:hover { background: var(--orange-dark); text-decoration: none; transform: translateY(-2px); }
 .btn-outline { border-color: rgba(255,255,255,.6); color: var(--white); }
 .btn-outline:hover { background: rgba(255,255,255,.1); text-decoration: none; }
@@ -109,11 +109,12 @@ a:hover { text-decoration: underline; }
   border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow);
   transition: transform .25s, box-shadow .25s, border-color .25s;
 }
-.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: #f3c6b0; }
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: #f3d98a; }
 .card h3 { font-size: 18px; color: var(--navy); margin-bottom: 10px; }
 .card p { color: var(--steel); font-size: 14.5px; }
 .card .icon {
   width: 48px; height: 48px; border-radius: 10px; background: var(--orange-soft);
+  color: var(--navy);
   display: flex; align-items: center; justify-content: center; font-size: 24px;
   margin-bottom: 16px;
 }
@@ -135,7 +136,7 @@ a:hover { text-decoration: underline; }
   padding-left: 28px; position: relative; color: var(--steel);
 }
 .feature-list li::before {
-  content: "✓"; position: absolute; left: 0; color: var(--orange); font-weight: 700;
+  content: "✓"; position: absolute; left: 0; color: var(--orange-dark); font-weight: 700;
 }
 
 /* ===== Stats band ===== */
@@ -174,7 +175,7 @@ a:hover { text-decoration: underline; }
   background: var(--navy); color: var(--white); padding: 56px 0;
 }
 .cta-band h2 { font-size: 26px; margin-bottom: 10px; }
-.cta-band p { color: #d6e3f2; margin-bottom: 24px; }
+.cta-band p { color: #d9dbdd; margin-bottom: 24px; }
 
 /* ===== Forms ===== */
 .form-grid { display: grid; gap: 18px; }
@@ -193,12 +194,12 @@ a:hover { text-decoration: underline; }
 .contact-info .item p { color: var(--steel); font-size: 14.5px; }
 
 /* ===== Footer ===== */
-.site-footer { background: var(--navy); color: #c8d5e0; padding: 48px 0 24px; }
+.site-footer { background: var(--navy); color: #c9cbcd; padding: 48px 0 24px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
 .site-footer h4 { color: var(--white); margin-bottom: 14px; font-size: 15px; }
 .site-footer ul { list-style: none; display: grid; gap: 10px; }
-.site-footer a { color: #c8d5e0; }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,.12); padding-top: 20px; font-size: 13px; color: #93a7b8; }
+.site-footer a { color: #c9cbcd; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.12); padding-top: 20px; font-size: 13px; color: #9a9da1; }
 
 /* ===== Breadcrumb ===== */
 .breadcrumb { font-size: 14px; color: var(--steel); padding: 24px 0 0; }
