@@ -227,11 +227,55 @@ a:hover { text-decoration: underline; }
 .reveal-d2 { transition-delay: .16s; }
 .reveal-d3 { transition-delay: .24s; }
 
+/* ===== Nav CTA ===== */
+.nav-links { margin-left: auto; }
+.nav-cta { margin-left: 20px; padding: 10px 18px; font-size: 14px; }
+
+/* ===== Hero eyebrow ===== */
+.hero-eyebrow {
+  display: inline-block; font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--orange); font-weight: 700; margin-bottom: 18px;
+  animation: heroUp .7s .08s cubic-bezier(.22, .61, .36, 1) both;
+}
+
+/* ===== Product spec line ===== */
+.spec-line {
+  color: var(--navy); font-weight: 600; font-size: 14px; margin: 2px 0 10px;
+}
+
+/* ===== Deep customization band ===== */
+.custom-band {
+  background: var(--navy); color: var(--white); padding: 72px 0; position: relative; overflow: hidden;
+}
+.custom-band::before {
+  content: ""; position: absolute; right: -140px; top: -140px; width: 360px; height: 360px;
+  border-radius: 50%; background: radial-gradient(circle, rgba(255,180,0,.16), transparent 70%);
+}
+.custom-grid {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
+}
+.band-eyebrow {
+  font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--orange); font-weight: 700; margin-bottom: 14px;
+}
+.custom-band h2 { font-size: 28px; margin-bottom: 16px; }
+.custom-band p { color: #d9dbdd; margin-bottom: 24px; max-width: 560px; }
+.custom-points { gap: 16px; }
+.custom-points li { color: #e7e8ea; }
+.custom-points li::before { color: var(--orange); }
+
+/* ===== About teaser ===== */
+.about-teaser { max-width: 760px; }
+.text-link { font-weight: 600; color: var(--navy); }
+.text-link:hover { color: var(--orange-dark); text-decoration: none; }
+
 /* ===== Responsive ===== */
 @media (max-width: 960px) {
   .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .stats-band { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
+  .custom-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 32px; }
 }
 @media (max-width: 640px) {
@@ -245,4 +289,5 @@ a:hover { text-decoration: underline; }
   .nav-links.open { display: flex; }
   .nav-links a { display: block; padding: 14px 24px; }
   .nav-toggle { display: block; }
+  .nav-cta { display: none; }
 }
