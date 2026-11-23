@@ -68,4 +68,75 @@ document.addEventListener('DOMContentLoaded', function () {
       el.textContent = el.getAttribute('data-count') + (el.getAttribute('data-suffix') || '');
     });
   }
+
+  // Hero ambient flow canvas
+  var canvas = document.querySelector('.hero-canvas');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var W = 0, H = 0, parts = [];
+    var mouse = { x: null, y: null };
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = canvas.clientWidth; H = canvas.clientHeight;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function spawn() {
+      return {
+        x: Math.random() * W,
+        baseY: Math.random() * H,
+        y: 0,
+        speed: 0.15 + Math.random() * 0.35,
+        size: 1 + Math.random() * 2.2,
+        alpha: 0.12 + Math.random() * 0.32,
+        phase: Math.random() * Math.PI * 2,
+        amp: 8 + Math.random() * 18,
+        yellow: Math.random() > 0.35
+      };
+    }
+    function initParts() {
+      parts = [];
+      for (var i = 0; i < 36; i++) parts.push(spawn());
+    }
+    resize();
+    initParts();
+    window.addEventListener('resize', function () { resize(); });
+
+    var hero = canvas.parentElement;
+    hero.addEventListener('mousemove', function (e) {
+      var r = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+    });
+    hero.addEventListener('mouseleave', function () { mouse.x = null; mouse.y = null; });
+
+    function frame(t) {
+      ctx.clearRect(0, 0, W, H);
+      parts.forEach(function (p) {
+        p.x += p.speed;
+        if (p.x > W + 10) { p.x = -10; p.baseY = Math.random() * H; }
+        p.y = p.baseY + Math.sin(t / 1400 + p.phase) * p.amp;
+        var a = p.alpha;
+        if (mouse.x !== null) {
+          var dx = p.x - mouse.x, dy = p.y - mouse.y;
+          var d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 120) a = Math.min(0.8, a + (1 - d / 120) * 0.3);
+        }
+        var col = p.yellow ? '255,180,0' : '217,219,221';
+        ctx.strokeStyle = 'rgba(' + col + ',' + (a * 0.5) + ')';
+        ctx.lineWidth = p.size * 0.7;
+        ctx.beginPath();
+        ctx.moveTo(p.x - p.speed * 10, p.y);
+        ctx.lineTo(p.x, p.y);
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(' + col + ',' + a + ')';
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(frame);
+    }
+    if (!reduced) requestAnimationFrame(frame);
+  }
 });
