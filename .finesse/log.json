@@ -1,0 +1,26 @@
+{
+  "builds": [
+    {
+      "date": "2026-11-23",
+      "page": "index.html (landing home)",
+      "register": "brand",
+      "dials": { "SOUL": 5, "SPECTACLE": 4, "DENSITY": 6 },
+      "palette": { "accent": "#ffb400", "dark": "#222529", "bg": "#ffffff", "soft": "#fff5df" },
+      "type": "Noto Sans sans; bold display heading, regular body",
+      "layout": "long-scroll alternating sections; 3-column product card grid; 4-up application grid",
+      "engine": "Canvas 2D airflow particles (yellow/grey streaks + dots, mouse proximity brighten, reduced-motion static)",
+      "material": "restrained industrial machined-metal feel; no emoji icons; hairline borders + tinted shadows",
+      "sections": ["nav+WhatsApp CTA", "hero", "credentials band", "VR vane series 7 cards", "other categories placeholder", "applications", "OEM/ODM customization band", "about teaser", "CTA", "footer"]
+    },
+    {
+      "date": "2026-11-23",
+      "page": "index.html (product rail iteration)",
+      "motivation": "B2B manufacturer page: fast scan, discover products, a sense of exploration while browsing",
+      "layout": "VR vane series becomes a desktop sticky horizontal rail: sticky viewport crops, inner track translates on scroll; progress bar + 01/07 counter; staggered tile heights, bottom aligned",
+      "disclosure": "Spec line (speed/power) hidden by default on hover-capable pointer devices, fades in on card hover; always visible on touch / reduced-motion",
+      "navigation": "Section spy via IntersectionObserver at 45% mid-line; nav link highlights current section, anchors jump",
+      "fallback": "Width <=960px or prefers-reduced-motion: rail degrades to vertical stack, counter/progress hidden; no WebGL/3D/exploded view (product photos are整泵白底图, deferred)",
+      "notes": "Transform target is the inner track, NOT the sticky viewport (sticky position cancels a transform on the sticky element itself)"
+    }
+  ]
+}

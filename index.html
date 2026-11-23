@@ -29,7 +29,7 @@
   </header>
 
   <!-- ===== Hero ===== -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <canvas class="hero-canvas" aria-hidden="true"></canvas>
     <div class="container">
       <p class="hero-eyebrow">Vacuum &amp; Compressed Air Manufacturer</p>
@@ -66,75 +66,81 @@
     </div>
   </section>
 
-  <!-- ===== VR rotary vane series ===== -->
-  <section class="section alt">
-    <div class="container">
-      <h2 class="section-title">Single-stage Rotary Vane Vacuum Pumps</h2>
-      <p class="section-sub">Oil-lubricated vane pumps covering light-duty to high-capacity industrial vacuum supply. Select a model to view specifications, performance curve and enquiry options.</p>
-      <div class="grid grid-3">
+  <!-- ===== VR rotary vane series (horizontal rail) ===== -->
+  <section id="products" class="h-section alt">
+    <div class="h-viewport">
+      <div class="container h-head">
+        <h2 class="section-title">Single-stage Rotary Vane Vacuum Pumps</h2>
+        <p class="section-sub">Oil-lubricated vane pumps covering light-duty to high-capacity industrial vacuum supply. Browse the range; hover a card for its key specs, or open a model for full details.</p>
+      </div>
+      <div class="h-track">
 
-        <div class="card product-card reveal">
+        <article class="h-tile h-tile--a reveal">
           <img class="thumb-img" src="assets/vr302.png" alt="VR 302 oil-lubricated rotary vane vacuum pump">
           <h3>VR 302</h3>
+          <p class="tile-desc">Flagship single-stage vane pump for stable medium vacuum supply at high capacity.</p>
           <p class="spec-line">300 / 360 m³/h · 7.5 kW</p>
-          <p>Flagship single-stage vane pump for stable medium vacuum supply at high capacity.</p>
           <div class="meta"><a href="product-vr302.html">View Details →</a></div>
-        </div>
+        </article>
 
-        <div class="card product-card reveal reveal-d1">
+        <article class="h-tile h-tile--b reveal">
           <img class="thumb-img" src="assets/vr250.png" alt="VR 250 oil-lubricated rotary vane vacuum pump">
           <h3>VR 250</h3>
+          <p class="tile-desc">General industrial evacuation and packaging applications with steady suction.</p>
           <p class="spec-line">250 / 300 m³/h · 5.5 / 7.5 kW</p>
-          <p>General industrial evacuation and packaging applications with steady suction.</p>
           <div class="meta"><a href="product-vr250.html">View Details →</a></div>
-        </div>
+        </article>
 
-        <div class="card product-card reveal reveal-d2">
+        <article class="h-tile h-tile--c reveal">
           <img class="thumb-img" src="assets/vr202.png" alt="VR 202 oil-lubricated rotary vane vacuum pump">
           <h3>VR 202</h3>
+          <p class="tile-desc">Medium-duty vacuum system with reliable continuous operation.</p>
           <p class="spec-line">200 / 240 m³/h · 4.5 kW</p>
-          <p>Medium-duty vacuum system with reliable continuous operation.</p>
           <div class="meta"><a href="product-vr202.html">View Details →</a></div>
-        </div>
+        </article>
 
-        <div class="card product-card reveal">
+        <article class="h-tile h-tile--d reveal">
           <img class="thumb-img" src="assets/vr160.png" alt="VR 160 oil-lubricated rotary vane vacuum pump">
           <h3>VR 160</h3>
+          <p class="tile-desc">Continuous industrial vacuum supply for production lines and process equipment.</p>
           <p class="spec-line">160 / 190 m³/h · 4 kW</p>
-          <p>Continuous industrial vacuum supply for production lines and process equipment.</p>
           <div class="meta"><a href="product-vr160.html">View Details →</a></div>
-        </div>
+        </article>
 
-        <div class="card product-card reveal reveal-d1">
+        <article class="h-tile h-tile--a reveal">
           <img class="thumb-img" src="assets/vr100.png" alt="VR 100 oil-lubricated rotary vane vacuum pump">
           <h3>VR 100</h3>
+          <p class="tile-desc">Compact unit for machinery automation, fixtures and smaller vacuum demands.</p>
           <p class="spec-line">100 / 120 m³/h · 3 kW</p>
-          <p>Compact unit for machinery automation, fixtures and smaller vacuum demands.</p>
           <div class="meta"><a href="product-vr100.html">View Details →</a></div>
-        </div>
+        </article>
 
-        <div class="card product-card reveal reveal-d2">
+        <article class="h-tile h-tile--b reveal">
           <img class="thumb-img" src="assets/vr063.png" alt="VR 063 oil-lubricated rotary vane vacuum pump">
           <h3>VR 063</h3>
+          <p class="tile-desc">Small-to-medium vacuum applications with balanced footprint and output.</p>
           <p class="spec-line">63 / 76 m³/h · 2.2 kW</p>
-          <p>Small-to-medium vacuum applications with balanced footprint and output.</p>
           <div class="meta"><a href="product-vr063.html">View Details →</a></div>
-        </div>
+        </article>
 
-        <div class="card product-card reveal">
+        <article class="h-tile h-tile--c reveal">
           <img class="thumb-img" src="assets/vr040.png" alt="VR 040 oil-lubricated rotary vane vacuum pump">
           <h3>VR 040</h3>
+          <p class="tile-desc">Light-duty evacuation in a compact, energy-efficient package.</p>
           <p class="spec-line">40 / 48 m³/h · 1.5 kW</p>
-          <p>Light-duty evacuation in a compact, energy-efficient package.</p>
           <div class="meta"><a href="product-vr040.html">View Details →</a></div>
-        </div>
+        </article>
 
+      </div>
+      <div class="h-meta">
+        <span class="h-counter">01 / 07</span>
+        <div class="h-progress"><span></span></div>
       </div>
     </div>
   </section>
 
   <!-- ===== Other categories ===== -->
-  <section class="section">
+  <section id="categories" class="section">
     <div class="container">
       <h2 class="section-title">Other Vacuum Equipment Ranges</h2>
       <p class="section-sub">Additional pump and package ranges available on request.</p>
@@ -149,7 +155,7 @@
   </section>
 
   <!-- ===== Applications ===== -->
-  <section class="section alt">
+  <section id="applications" class="section alt">
     <div class="container">
       <h2 class="section-title">Applications &amp; Industries</h2>
       <p class="section-sub">Our equipment serves a wide range of industrial processes.</p>
@@ -163,7 +169,7 @@
   </section>
 
   <!-- ===== Deep customization ===== -->
-  <section class="custom-band">
+  <section id="customization" class="custom-band">
     <div class="container">
       <div class="custom-grid">
         <div class="reveal">
@@ -183,7 +189,7 @@
   </section>
 
   <!-- ===== About teaser ===== -->
-  <section class="section">
+  <section id="about-teaser" class="section">
     <div class="container">
       <div class="about-teaser">
         <div class="reveal">
@@ -196,7 +202,7 @@
   </section>
 
   <!-- ===== CTA ===== -->
-  <section class="cta-band">
+  <section id="cta-band" class="cta-band">
     <div class="container">
       <h2>Need a Pump or Compressor for Your Project?</h2>
       <p>Send us your requirements — model, capacity, voltage and application — and we will recommend the right configuration.</p>

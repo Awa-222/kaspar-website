@@ -139,4 +139,71 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (!reduced) requestAnimationFrame(frame);
   }
+
+  // ===== Horizontal product rail (desktop sticky pin) =====
+  var hSection = document.querySelector('.h-section');
+  if (hSection) {
+    var viewport = hSection.querySelector('.h-viewport');
+    var track = hSection.querySelector('.h-track');
+    var counter = hSection.querySelector('.h-counter');
+    var fill = hSection.querySelector('.h-progress span');
+    var hReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var hOverflow = 0, hTop = 0;
+    var hTotal = track ? track.children.length : 0;
+
+    function hMeasure() {
+      if (hReduce || window.innerWidth <= 960) {
+        hSection.style.height = 'auto';
+        track.style.transform = 'none';
+        return;
+      }
+      hTop = hSection.getBoundingClientRect().top + window.scrollY;
+      hOverflow = Math.max(0, track.scrollWidth - viewport.clientWidth);
+      hSection.style.height = (window.innerHeight + hOverflow) + 'px';
+    }
+    function hOnScroll() {
+      if (hReduce || window.innerWidth <= 960 || hOverflow <= 0) return;
+      var max = hSection.offsetHeight - window.innerHeight;
+      var p = Math.min(Math.max((window.scrollY - hTop) / max, 0), 1);
+      track.style.transform = 'translateX(' + (-p * hOverflow) + 'px)';
+      if (fill) fill.style.transform = 'scaleX(' + p + ')';
+      if (counter && hTotal) {
+        var idx = Math.min(Math.floor(p * hTotal), hTotal - 1) + 1;
+        counter.textContent = (idx < 10 ? '0' : '') + idx + ' / ' + (hTotal < 10 ? '0' : '') + hTotal;
+      }
+    }
+    hMeasure(); hOnScroll();
+    window.addEventListener('resize', hMeasure);
+    window.addEventListener('load', hMeasure);
+    window.addEventListener('scroll', hOnScroll, { passive: true });
+  }
+
+  // ===== Section spy: highlight the matching nav link on the homepage =====
+  var spyMap = [
+    { sel: '#hero', link: '.nav-links a[href="index.html"]' },
+    { sel: '#products', link: '.nav-links a[href="products.html"]' },
+    { sel: '#categories', link: '.nav-links a[href="products.html"]' },
+    { sel: '#about-teaser', link: '.nav-links a[href="about.html"]' },
+    { sel: '#cta-band', link: '.nav-links a[href="contact.html"]' }
+  ];
+  var spyPairs = spyMap.map(function (m) {
+    var sec = document.querySelector(m.sel);
+    var link = document.querySelector(m.link);
+    return (sec && link) ? { sec: sec, link: link } : null;
+  }).filter(Boolean);
+
+  function spyActivate(link) {
+    spyPairs.forEach(function (p) { p.link.classList.toggle('active', p.link === link); });
+  }
+  if ('IntersectionObserver' in window && spyPairs.length) {
+    var spyIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var pair = spyPairs.find(function (p) { return p.sec === entry.target; });
+          if (pair) spyActivate(pair.link);
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+    spyPairs.forEach(function (p) { spyIO.observe(p.sec); });
+  }
 });
